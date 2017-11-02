@@ -27,6 +27,7 @@ function onButtonClick() {
     return service.getCharacteristic(characteristicUuid);
   })
   .then(characteristic => {
+   
     log('> Characteristic UUID:  ' + characteristic.uuid);
     log('> Broadcast:            ' + characteristic.properties.broadcast);
     log('> Read:                 ' + characteristic.properties.read);
@@ -40,7 +41,11 @@ function onButtonClick() {
     log('> Queued Write:         ' + characteristic.properties.reliableWrite);
     log('> Writable Auxiliaries: ' +
       characteristic.properties.writableAuxiliaries);
+  characteristic.readValue();
   })
+ .then(value => {
+  console.log('value ' + value.getUint8(0));
+})
   .catch(error => {
     log('Argh! ' + error);
   });
