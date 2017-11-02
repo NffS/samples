@@ -23,7 +23,7 @@ function onButtonClick() {
     return server.getPrimaryService(serviceUuid);
   })
   .then(service => {
-    log('Getting Characteristic...');
+    log('Getting Chafsafasfracteristic...');
     return service.getCharacteristic(characteristicUuid);
   })
   .then(characteristic => {
