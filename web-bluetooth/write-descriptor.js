@@ -1,4 +1,6 @@
 var myDescriptor;
+  document.querySelector('#service').value = "caecface-e1d9-11e6-bf01-fe55135034f0"
+  document.querySelector('#characteristic').value = "caec2ebc-e1d9-11e6-bf01-fe55135034f1"
 
 function onReadButtonClick() {
   let serviceUuid = document.querySelector('#service').value;
