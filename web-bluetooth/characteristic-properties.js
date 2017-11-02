@@ -40,10 +40,11 @@ function onButtonClick() {
         characteristic.properties.authenticatedSignedWrites);
     log('> Queued Write:         ' + characteristic.properties.reliableWrite);
     log('> Writable Auxiliaries: ' + characteristic.properties.writableAuxiliaries);
-    return characteristic.writeValue(11);
+    var resetEnergyExpended = Uint8Array.of(7);
+    return characteristic.writeValue(resetEnergyExpended);
   })
  .then(_ => {
-        log('valaaa has been sent.');
+        log('val has been sent.');
     })
   .catch(error => {
     log('Argh! ' + error);
