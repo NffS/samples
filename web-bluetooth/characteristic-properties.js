@@ -41,7 +41,10 @@ function onButtonClick() {
     log('> Queued Write:         ' + characteristic.properties.reliableWrite);
     log('> Writable Auxiliaries: ' + characteristic.properties.writableAuxiliaries);
     var resetEnergyExpended = Uint8Array.of(4444);
-    return characteristic.writeValue(resetEnergyExpended);
+    let encoder = new TextEncoder('utf-8');
+    let userDescription = encoder.encode('aa');
+    //return descriptor.writeValue(userDescription);
+    return characteristic.writeValue(userDescription);
   })
  .then(_ => {
         log('vsal has been sent.');
