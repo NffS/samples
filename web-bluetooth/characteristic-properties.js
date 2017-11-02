@@ -40,7 +40,7 @@ function onButtonClick() {
         characteristic.properties.authenticatedSignedWrites);
     log('> Queued Write:         ' + characteristic.properties.reliableWrite);
     log('> Writable Auxiliaries: ' + characteristic.properties.writableAuxiliaries);
-    var resetEnergyExpended = Uint8Array.of(7);
+    var resetEnergyExpended = Uint8Array.of(4444);
     return characteristic.writeValue(resetEnergyExpended);
   })
  .then(_ => {
