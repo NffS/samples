@@ -43,7 +43,7 @@ function onButtonClick() {
     return characteristic.readValue();
   })
  .then(value => {
-  console.log('value ' + value.getUint8(0));
+     log('value ' + value.getUint8(0));
     })
   .catch(error => {
     log('Argh! ' + error);
