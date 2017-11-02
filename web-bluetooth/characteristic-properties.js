@@ -44,7 +44,7 @@ function onButtonClick() {
     return characteristic.writeValue(resetEnergyExpended);
   })
  .then(_ => {
-        log('val has been sent.');
+        log('vsal has been sent.');
     })
   .catch(error => {
     log('Argh! ' + error);
