@@ -1,3 +1,6 @@
+ document.querySelector('#service').value = "caecface-e1d9-11e6-bf01-fe55135034f0";
+  document.querySelector('#characteristic').value = "caec2ebc-e1d9-11e6-bf01-fe55135034f1";
+
 function onButtonClick() {
   let serviceUuid = document.querySelector('#service').value;
   if (serviceUuid.startsWith('0x')) {
