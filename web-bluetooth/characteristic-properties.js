@@ -42,9 +42,9 @@ function onButtonClick() {
     log('> Writable Auxiliaries: ' + characteristic.properties.writableAuxiliaries);
     var resetEnergyExpended = Uint8Array.of(4444);
     let encoder = new TextEncoder('utf-8');
-    let userDescription = encoder.encode('blabla');
+    let userDescription = encoder.encode('Defines the time between measurements.');
     //return descriptor.writeValue(userDescription);
-    return characteristic.writeValue(resetEnergyExpended);
+    return characteristic.writeValue(userDescription);
   })
  .then(_ => {
         log('vsdasdasal has been sent.');
