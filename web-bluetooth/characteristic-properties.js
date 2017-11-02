@@ -27,9 +27,7 @@ function onButtonClick() {
     return service.getCharacteristic(characteristicUuid);
   })
   .then(characteristic => {
-   
-    
-  characteristic.readValue();
+    return characteristic.readValue();
   })
  .then(value => {
   console.log('value ' + value.getUint8(0));
