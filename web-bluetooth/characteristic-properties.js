@@ -11,9 +11,9 @@ function onButtonClick() {
   if (characteristicUuid.startsWith('0x')) {
     characteristicUuid = parseInt(characteristicUuid);
   }
-
+    var serviceGlobal;
   log('Requesting Bluetooth Device...');
-  navigator.bluetooth.requestDevice({filters: [{services: [serviceUuid]}]})
+  navigator.bluetooth.requestDevice({filters: [{services: ["6ae936ae-f33b-4836-8a2b-4d38db8bcaf0"]}]})
   .then(device => {
     log('Connecting to GATT Server...');
     return device.gatt.connect();
@@ -24,7 +24,8 @@ function onButtonClick() {
   })
   .then(service => {
         log('Getting getCharacteristic...');
-    return service.getCharacteristic(characteristicUuid);
+    serviceGlobal=service;
+    return service.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf1");
   })
   .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
@@ -34,7 +35,7 @@ function onButtonClick() {
   })
  .then(_ => {
         log('ssid has been sent.');
-    return service.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf2");
+    return serviceGlobal.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf2");
     })
 .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
@@ -44,7 +45,7 @@ function onButtonClick() {
 })
 .then(_ => {
         log('pass has been sent.');
-    return service.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf3");
+    return serviceGlobal.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf3");
 })
 .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
