@@ -28,27 +28,33 @@ function onButtonClick() {
   })
   .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
-    log('> Characteristic UUID:  ' + characteristic.uuid);
-    log('> Broadcast:            ' + characteristic.properties.broadcast);
-    log('> Read:                 ' + characteristic.properties.read);
-    log('> Write w/o response:   ' +
-        characteristic.properties.writeWithoutResponse);
-    log('> Write:                ' + characteristic.properties.write);
-    log('> Notify:               ' + characteristic.properties.notify);
-    log('> Indicate:             ' + characteristic.properties.indicate);
-    log('> Signed Write:         ' +
-        characteristic.properties.authenticatedSignedWrites);
-    log('> Queued Write:         ' + characteristic.properties.reliableWrite);
-    log('> Writable Auxiliaries: ' + characteristic.properties.writableAuxiliaries);
-    var resetEnergyExpended = Uint8Array.of(4444);
     let encoder = new TextEncoder('utf-8');
-    let userDescription = encoder.encode('Defines the time between measurements.');
-    //return descriptor.writeValue(userDescription);
+    let userDescription = encoder.encode('ssid');
     return characteristic.writeValue(userDescription);
   })
  .then(_ => {
-        log('vsdasdasal has been sent.');
+        log('ssid has been sent.');
+    return service.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf2");
     })
+.then(characteristic => {
+        log('Getting Chafsafasfracteristic...');
+    let encoder = new TextEncoder('utf-8');
+    let userDescription = encoder.encode('YyAXCAMhxb3Wajm+ayov8l9xc9asuKCkZKXtX79V20qXxECRhAb72+kyE+Ng1nhoUvBB1zxgtk9Q0UlCj8RQ/9zJ68uN7b+mGfFkmO8P0jRLdvlpHY5Eb0JsZojT3yan');
+    return characteristic.writeValue(userDescription);
+})
+.then(_ => {
+        log('pass has been sent.');
+    return service.getCharacteristic("6ae936ae-f33b-4836-8a2b-4d38db8bcaf3");
+})
+.then(characteristic => {
+        log('Getting Chafsafasfracteristic...');
+    let encoder = new TextEncoder('utf-8');
+    let userDescription = encoder.encode('afsafasf@gasga.com');
+    return characteristic.writeValue(userDescription);
+})
+.then(_ => {
+        log('owner has been sent.');
+})
   .catch(error => {
     log('Argh! ' + error);
   });
