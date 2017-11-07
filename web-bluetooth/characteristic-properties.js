@@ -30,7 +30,7 @@ function onButtonClick() {
   .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
     let encoder = new TextEncoder('utf-8');
-    let userDescription = encoder.encode('ssid');
+    let userDescription = encoder.encode(document.querySelector('#characteristic').value);
     return characteristic.writeValue(userDescription);
   })
  .then(_ => {
@@ -40,7 +40,7 @@ function onButtonClick() {
 .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
     let encoder = new TextEncoder('utf-8');
-    let userDescription = encoder.encode('YyAXCAMhxb3Wajm+ayov8l9xc9asuKCkZKXtX79V20qXxECRhAb72+kyE+Ng1nhoUvBB1zxgtk9Q0UlCj8RQ/9zJ68uN7b+mGfFkmO8P0jRLdvlpHY5Eb0JsZojT3yan');
+    let userDescription = encoder.encode('Sm9Rg2olh6HB5V9YY6NabAAUhpdgWAbS+robqdGZXW246vKfgwbBwUbg16oE1kmKJKEbvYmMSki35L0aI+YW6tSMjgJzuc+/XK8HmylZlDG2LXx+E4/QEPNaMogvFSbB');
     return characteristic.writeValue(userDescription);
 })
 .then(_ => {
