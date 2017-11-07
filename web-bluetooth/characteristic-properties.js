@@ -50,7 +50,7 @@ function onButtonClick() {
 .then(characteristic => {
         log('Getting Chafsafasfracteristic...');
     let encoder = new TextEncoder('utf-8');
-    let userDescription = encoder.encode('afsafasf@gasga.com');
+    let userDescription = encoder.encode('ab@a.b');
     return characteristic.writeValue(userDescription);
 })
 .then(_ => {
